@@ -7,22 +7,22 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # create users
-bob = User.create(name: 'Bob Bobby', password_digest: 'password123', email: 'hello@hello.com')
-bab = User.create(name: 'Ted Teddy', password_digest: 'password321', email: 'bye@bye.com')
+bob = User.create(username: 'BobRules', email: 'hello@hello.com')
+bab = User.create(username: 'Ted', email: 'bye@bye.com')
 
 # create challenges
 ping_pong = Challenge.create(title: 'ping-pong masters',
                             description: 'Who is the ping-pong master?',
                             ante: 'A round of beers',
-                            challengers: [bob.name, bab.name].to_s,
-                            user_id: bob.id,
+                            challengers: [bob.username, bab.username],
+                            owner: bob.id,
                             ante_settled: false)
 poker     = Challenge.create(title: 'poker masters',
                             description: 'Who is the poker master?',
                             ante: 'A bag of peanuts',
-                            challengers: [bob.name, bab.name].to_s,
-                            user_id: bab.id,
-                            winner: bob.name,
+                            challengers: [bob.username, bab.username],
+                            owner: bab.id,
+                            winner: bob.username,
                             ante_settled: true)
 
 # create comments
