@@ -1,5 +1,4 @@
 class UserResource < JSONAPI::Resource
-  attributes :name, :email
+  attributes :username, :email, :ext_user_id
   has_many :comments
-  has_many :challenges
 end

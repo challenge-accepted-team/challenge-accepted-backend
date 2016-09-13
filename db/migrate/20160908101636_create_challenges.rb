@@ -3,7 +3,8 @@ class CreateChallenges < ActiveRecord::Migration[5.0]
     create_table :challenges do |t|
       t.string :title
       t.string :description
-      t.string :challengers
+      t.string :owner
+      t.text :challengers, array: true
       t.string :ante
       t.string :winner
       t.boolean :ante_settled
