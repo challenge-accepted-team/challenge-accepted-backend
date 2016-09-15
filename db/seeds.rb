@@ -14,13 +14,13 @@ bab = User.create(username: 'Ted', email: 'bye@bye.com')
 ping_pong = Challenge.create(title: 'ping-pong masters',
                             description: 'Who is the ping-pong master?',
                             ante: 'A round of beers',
-                            challengers: [bob.username, bab.username],
+                            challenger: bab.id,
                             owner: bob.id,
                             ante_settled: false)
 poker     = Challenge.create(title: 'poker masters',
                             description: 'Who is the poker master?',
                             ante: 'A bag of peanuts',
-                            challengers: [bob.username, bab.username],
+                            challenger: bob.id,
                             owner: bab.id,
                             winner: bob.username,
                             ante_settled: true)

@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20160908101952) do
     t.string   "title"
     t.string   "description"
     t.string   "owner"
-    t.text     "challengers",               array: true
+    t.string   "challenger"
     t.string   "ante"
     t.string   "winner"
     t.boolean  "ante_settled"
